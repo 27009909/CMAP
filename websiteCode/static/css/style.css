@@ -1,0 +1,293 @@
+body {
+	font-family: 'Futura PT Medium';
+	margin: 0;
+	color: #0741ad;
+}
+
+#span {
+	display: block;
+	padding: 40px;
+}
+
+#subheader {
+	width: 100%;
+	background: #092756;
+	background-color: red;
+	height: 30px;
+}
+
+#severitySubmitted {
+    vertical-align: top;
+    display: inline-block;
+    text-align: center;
+    
+
+    border-top: 1px solid #0741ad;
+    padding: 5px;
+}
+
+#outwardPostcode {
+    vertical-align: top;
+    display: inline-block;
+    text-align: center;
+}
+
+#header {
+	padding: 10px;
+	width: 100%;
+	background-color: red;
+	height: 30px;
+}
+
+#titlecontainer {
+	width: 100%;
+	background-color: #FFFFFF;
+	font-size: 10px;
+	text-align: center;
+}
+
+#titlecontainer li {
+	font-size: 20px;
+}
+
+#container {
+	width: 100%;
+	background-color: #FFFFFF;
+	margin: auto;
+	text-align: center;
+	
+	display: table;
+    position: relative;
+
+}
+
+#EnterPostcode {
+	height: 405px;
+	background-image: linear-gradient(rgba(255,255,255,0.5), rgba(255,255,255,0.5)), url("https://i.ibb.co/rb99P4J/161039975366441384-1.jpg");
+    background-size: 100%;
+    display: table-cell;
+    vertical-align: middle;
+
+}
+
+#EnterCompare {
+	height: 510px;
+	background-image: linear-gradient(rgba(255,255,255,0.5), rgba(255,255,255,0.5)), url("https://i.ibb.co/f9T5GC6/161070302943993493ddddd.jpg");
+    background-size: 100%;
+    display: table-cell;
+    vertical-align: middle;
+
+}
+
+#EnterPostcodeContainer {
+
+    background: rgba(255,255,255,0.9);
+    margin-left: auto;
+    margin-right: auto;
+    height: 80%;
+    width:30%;
+    line-height: 12px;
+
+    
+}
+
+
+#table {
+	width: 100%;
+	height: 200px;
+	background-color: #F8F8F8;
+	margin: auto;
+	text-align: center;
+	
+	display: table;
+    position: relative;
+
+}
+
+#space {
+height: 30px;
+}
+
+#SeverityRating {
+
+    display: table-cell;
+    vertical-align: middle;
+
+}
+
+#cmapLabel {
+
+    width: 50%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#SeverityContainer {
+    background: white;
+    margin-left: auto;
+    margin-right: auto;
+    width:75%;
+    border-right: 2px solid #0741ad;
+	border-left: 2px solid #0741ad;
+}
+
+#invisble {
+    opacity: 0;
+}
+
+#EnterPostcodeLabel {
+vertical-align: middle;
+	opacity: 1;
+	margin-top: 50px;
+}
+
+#EnterPostcodeForm {
+vertical-align: middle;
+opacity: 1;
+
+}
+
+#EnterPostcodeButton {
+vertical-align: middle;
+opacity: 1;
+
+}
+
+#mapOptions {
+	height: 5%;
+	white-space: pre-line;
+}
+
+#first {
+	width: 75%;
+	float: left;
+	height: 750px;
+	display: inline-block;
+}
+
+#second {
+	width: 25%;
+	float: left;
+	height: 750px;
+	background-color: #F8F8F8;
+	display: inline-block;
+}
+
+#clear {
+	clear: both;
+}
+
+#bottomDiv {
+    display: flex;
+    background: rgba(221,232,254,1);
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    height: 75px;
+    width:100%;
+    color: #0741ad;
+    gap: 100px;
+    font-size: 5px;
+}
+
+a:visited           { color: #0741ad; }
+
+.titlenav {
+	background-color: white;
+	text-align: center;
+	list-style-type: none;
+	height: 80px;
+	padding-top: 5px;
+	padding-bottom: 5px;
+	margin: 0;
+}
+
+.titlenav li {
+	line-height: 10px;
+	font-size: 20px;
+}
+
+.nav {
+	background-color: #0741ad;
+	color: white;
+	list-style-type: none;
+	text-align: center;
+	margin: 0;
+	padding: 0;
+}
+
+.nav li {
+	color: white;
+	display: inline-block;
+	font-size: 20px;
+	padding: 20px;
+}
+
+.Links:link {
+	color: white;
+	background-color: transparent;
+	text-decoration: none;
+}
+
+.Links:visited {
+    text-decoration: none;
+	color: white;
+	background-color: transparent;
+}
+
+.ol-popup {
+
+	position: absolute;
+	background-color: white;
+	/*--webkit-filter: drop-shadow(0 1px 4px rgba(0,0,0,0.2));*/
+	filter: drop-shadow(0 1px 4px rgba(0, 0, 0, 0.2));
+	padding: 10px;
+	line-height: 13px;
+	border-radius: 0px;
+	border: 1px solid #cccccc;
+	bottom: 12px;
+	left: -50px;
+	min-width: 180px;
+	font-size: 11.5px;
+	font-family: 'Futura PT Medium';
+}
+
+.ol-popup:after,
+.ol-popup:before {
+	top: 100%;
+	border: solid transparent;
+	content: " ";
+	height: 0;
+	width: 0;
+	position: absolute;
+	pointer-events: none;
+}
+
+.ol-popup:after {
+	border-top-color: white;
+	border-width: 10px;
+	left: 48px;
+	margin-left: -10px;
+}
+
+.ol-popup:before {
+	border-top-color: #cccccc;
+	border-width: 11px;
+	left: 48px;
+	margin-left: -11px;
+}
+
+@font-face {
+	font-family: 'Futura PT Medium';
+	src: url('FuturaPT-Medium.eot');
+	src: url('FuturaPT-Medium.eot?#iefix') format('embedded-opentype'), url('FuturaPT-Medium.woff') format('woff'), url('FuturaPT-Medium.ttf') format('truetype');
+	font-weight: normal;
+	font-style: normal;
+}
+
+
+/* Page Content */
+
+.content {
+	
+}
