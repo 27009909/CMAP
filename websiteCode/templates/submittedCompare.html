@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+      <link rel="icon" type="image/png" sizes="32x32" href="https://i.ibb.co/zR3RBFT/favicon-32x32.png">
+      <title>CMAP</title>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}"></link>
+      <script src="{{ url_for('static', filename='css/compare.js') }}"></script>
+   </head>
+   <body>
+      <div style="text-align:center;" id="titlecontainer">
+      <a href="http://cmap-env.eba-gitnjsz8.us-east-1.elasticbeanstalk.com/" style="text-align:center;"><img style="text-align:center;" src="https://i.ibb.co/x7DVZ6K/logo-transparent-background.png" alt="logo-transparent-background" border="0" width="170" height="78.9"></a>
+       </div>
+      <div id="titlecontainer">
+         <ul class="nav">
+            <li><a href="index.html" class="Links" >Postcode Modelling & Plotting</a></li>
+            <li><a href="Compare.html" class="Links" style="border-style: solid;border-color: white;border-width: 1px;padding: 5px">Compare Postcodes</a></li>
+            <li><a href="RegionalTrends.html" class="Links">Regional Modelling & Trends</a></li>
+         </ul>
+      </div>
+      
+      <div id="container">
+      <div id="EnterCompare" style="display: flex; justify-content: center; align-items: center; gap: 10px;">
+      <div id="EnterPostcodeContainer">
+      <h3 id="Postcode1"></h3>
+      <h4 id="p1NumberOfCrimes"></h4>
+      <h4 id="p1Mode"></h4>
+      <div id="space"></div>
+      <h3 id="Postcode1Outward"></h3>
+      <h4 id="p1NumberOfCrimesOutward"></h4>
+      <h4 id="p1ModeOutward"></h4>
+      <h4 id="p1PredictedNumberOfCrimes"></h4>
+      <h4 id="p1CrimeIncreasingDecreasing"></h4>
+      <h4 id="p1Severity"></h4>
+      <h4 id="dataTime"></h4>
+      </div>
+      <div id="EnterPostcodeContainer">
+      <h3 id="Postcode2"></h3>
+      <h4 id="p2NumberOfCrimes"></h4>
+      <h4 id="p2Mode"></h4>
+      <div id="space"></div>
+      <h3 id="Postcode2Outward"></h3>
+      <h4 id="p2NumberOfCrimesOutward"></h4>
+      <h4 id="p2ModeOutward"></h4>
+      <h4 id="p2PredictedNumberOfCrimes"></h4>
+      <h4 id="p2CrimeIncreasingDecreasing"></h4>
+      <h4 id="p2Severity"></h4>
+      <h4 id="dataTime2"></h4>
+      </div>
+      </div>
+      </div>
+      
+      <style type="text/css">
+.tg  {border-collapse:collapse;border-spacing:0; display: inline-block;}
+.tg td{border-color:black;border-style:solid;border-width:1px;font-size:14px;
+  overflow:hidden;padding:10px 5px;word-break:normal;}
+.tg th{border-color:black;border-style:solid;border-width:1px;font-size:14px;
+  font-weight:normal;overflow:hidden;padding:10px 5px;word-break:normal;}
+.tg .tg-baqh{text-align:center;vertical-align:middle}
+.tg .tg-c3ow{border-color:inherit;text-align:center;vertical-align:middle}
+</style>
+
+<div id="table"><div id="SeverityRating"><div id="SeverityContainer"><div id="space"></div><div><img style="text-align:center;" src="https://i.ibb.co/4s4kwht/logo-transparent-background.png" alt="logo-transparent-background_severity" border="0" width="170" height="78.9"></img></div>
+<div id="cmapLabel"><label>Severity Rating converts a crime type, e.g. Burglary, and gives it a value on the crime's severity. Severity Rating values range from 0 to 100. The worse the crime the worse the severity rating. This allows crimes to be modelled on their month number, month in Unix, year number and their crime severity rating.
+</label></div>
+<div id="space"></div>
+<div><table class="tg">
+<thead>
+  <tr>
+    <th class="tg-c3ow">Crime</th>
+    <th class="tg-c3ow">CMAP Severity Rating</th>
+    <th class="tg-baqh">Crime</th>
+    <th class="tg-baqh">CMAP Severity Rating</th>
+  </tr>
+</thead>
+<tbody>
+  <tr>
+    <td class="tg-c3ow">All crime</td>
+    <td class="tg-c3ow">10</td>
+    <td class="tg-baqh">Public Order</td>
+    <td class="tg-0lax">30</td>
+  </tr>
+  <tr>
+    <td class="tg-c3ow">Anti-social behaviour</td>
+    <td class="tg-c3ow">50</td>
+    <td class="tg-baqh">Robbery</td>
+    <td class="tg-0lax">80</td>
+  </tr>
+  <tr>
+    <td class="tg-c3ow">Bicycle theft</td>
+    <td class="tg-c3ow">10</td>
+    <td class="tg-baqh">Shoplifting</td>
+    <td class="tg-0lax">30</td>
+  </tr>
+  <tr>
+    <td class="tg-c3ow">Burglary</td>
+    <td class="tg-c3ow">100</td>
+    <td class="tg-baqh">Theft from the person</td>
+    <td class="tg-0lax">90</td>
+  </tr>
+  <tr>
+    <td class="tg-c3ow">Criminal damage and arson</td>
+    <td class="tg-c3ow">90</td>
+    <td class="tg-baqh">Vehicle Crime</td>
+    <td class="tg-0lax">20</td>
+  </tr>
+  <tr>
+    <td class="tg-c3ow">Drugs</td>
+    <td class="tg-c3ow">60</td>
+    <td class="tg-baqh">Violence and sexual offences</td>
+    <td class="tg-0lax">90</td>
+  </tr>
+  <tr>
+    <td class="tg-c3ow">Other theft</td>
+    <td class="tg-c3ow">10</td>
+    <td class="tg-baqh">Other Crime</td>
+    <td class="tg-0lax">10</td>
+  </tr>
+  <tr>
+    <td class="tg-c3ow">Possession of weapons</td>
+    <td class="tg-c3ow">90</td>
+  </tr>
+</tbody>
+</table>
+<div id="space"></div>
+</div>
+</div>
+</div>
+</div>
+      
+      <div id="bottomDiv">
+<img src="https://i.ibb.co/x7DVZ6K/logo-transparent-background.png" alt="logo-transparent-background" border="0" width="112.2" height="52.074"></img><p style="color=#0741ad; font-size: 14px;">Created by Tom Perry 2021 (27009909)</p><a class="DataLink" href="https://data.police.uk/data/" style="color=#0741ad; font-size: 14px;"><p>Data Source</p></a>
+</div>
+   </body>
+</html>

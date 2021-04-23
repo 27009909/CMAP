@@ -1,0 +1,609 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <link rel="icon" type="image/png" sizes="32x32" href="https://i.ibb.co/zR3RBFT/favicon-32x32.png">
+   <title>CMAP</title>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1">
+   <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+   <div style="text-align:center;" id="titlecontainer">
+      <a href="http://cmap-env.eba-gitnjsz8.us-east-1.elasticbeanstalk.com/" style="text-align:center;"><img style="text-align:center;" src="https://i.ibb.co/x7DVZ6K/logo-transparent-background.png" alt="logo-transparent-background" border="0" width="170" height="78.9"></a>
+   </div>
+   <div id="titlecontainer">
+      <ul class="nav">
+         <li><a href="index.html" class="Links" style="border-style: solid;border-color: white;border-width: 1px;padding: 5px">Postcode Modelling & Plotting</a></li>
+         <li><a href="Compare.html" class="Links" >Compare Postcodes</a></li>
+         <li><a href="RegionalTrends.html" class="Links">Regional Modelling & Trends</a></li>
+      </ul>
+   </div>
+   <div id="container">
+      <div id="EnterPostcode">
+      <div id="EnterPostcodeContainer">
+      <div id="PostcodeText"><p id="invisble"> _ </p>
+         <form action="{{ url_for('predict')}}"method="post"><h4>Enter your postcode</h4>
+            <input pattern="[A-Za-z]{1,2}[0-9Rr][0-9A-Za-z]? [0-9][ABD-HJLNP-UW-Zabd-hjlnp-uw-z]{2}" type="text" name="Postcode" placeholder="Postcode" required="required" /></div><h4>Select data from</h4>
+            <div><select name="firstmonthDropDown" id="firstmonthDropDown" required="required" onchange="myFunction()">
+               <option value="1">1</option>
+               <option value="2">2</option>
+               <option value="3">3</option>
+               <option value="4">4</option>
+               <option value="5">5</option>
+               <option value="6">6</option>
+               <option value="7">7</option>
+               <option value="8">8</option>
+               <option value="9">9</option>
+               <option value="10">10</option>
+               <option value="11" selected="selected">11</option>
+               <option value="12">12</option>
+            </select>
+            
+            <select name="firstyearDropDown" id="firstyearDropDown" required="required" onchange="myFunction()">
+               <option value="2018" selected="selected">2018</option>
+               <option value="2019">2019</option>
+               <option value="2020">2020</option>
+               <option value="2021">2021</option>
+            </select></div><h4>Select data to</h4><div>
+            <select name="secoondmonthDropDown" id="secondmonthDropDown" required="required" onchange="myFunction2()">
+               <option value="1">1</option>
+               <option value="2" selected="selected">2</option>
+               <option value="3">3</option>
+               <option value="4">4</option>
+               <option value="5">5</option>
+               <option value="6">6</option>
+               <option value="7">7</option>
+               <option value="8">8</option>
+               <option value="9">9</option>
+               <option value="10">10</option>
+               <option value="11" >11</option>
+               <option value="12">12</option>
+            </select>
+            <select name="secondyearDropDown" id="secondyearDropDown" required="required" onchange="myFunction2()">
+               <option value="2018">2018</option>
+               <option value="2019">2019</option>
+               <option value="2020">2020</option>
+               <option value="2021" selected="selected">2021</option>
+            </select></div><p id= "DataDateInfo" >Data from October 2020 to February 2021</p>
+            <button type="sumbit" class="btn btn-primary btn-block btn-large">Plot & Predict</button>
+         </form>
+      </div></div></div>
+
+<script>
+
+function setSelectValue (id, val) {
+    document.getElementById(id).value = val;
+}
+
+
+function myFunction2() {
+var month1 = document.getElementById("firstmonthDropDown").value;
+var month2 = document.getElementById("secondmonthDropDown").value;
+var year1 = document.getElementById("firstyearDropDown").value;
+var year2 = document.getElementById("secondyearDropDown").value;
+
+var month1text = "";
+var month2text = "";
+var year1text = "";
+var year2text = "";
+
+
+var month2int = 0;
+month2int = document.getElementById("secondmonthDropDown").selectedIndex;
+month2int += 1;
+
+
+var jan = document.createElement("option");
+var feb = document.createElement("option");
+var mar = document.createElement("option");
+var apr = document.createElement("option");
+var may = document.createElement("option");
+var jun = document.createElement("option");
+var jul = document.createElement("option");
+var aug = document.createElement("option");
+var sep = document.createElement("option");
+var oct = document.createElement("option");
+var nov = document.createElement("option");
+var dec = document.createElement("option");
+
+jan.text = "1";
+feb.text = "2";
+mar.text = "3";
+apr.text = "4";
+may.text = "5";
+jun.text = "6";
+jul.text = "7";
+aug.text = "8";
+sep.text = "9";
+oct.text = "10";
+nov.text = "11";
+dec.text = "12";
+
+
+if (year2 == "2018") {
+console.log(month2int);
+secondmonthDropDown.remove(11);
+secondmonthDropDown.remove(10);
+secondmonthDropDown.remove(9);
+secondmonthDropDown.remove(8);
+secondmonthDropDown.remove(7);
+secondmonthDropDown.remove(6);
+secondmonthDropDown.remove(5);
+secondmonthDropDown.remove(4);
+secondmonthDropDown.remove(3);
+secondmonthDropDown.remove(2);
+secondmonthDropDown.remove(1);
+secondmonthDropDown.remove(0);
+
+if (month2int == 10) {
+month2int += 1;
+}
+else if ((month2int > 2) && (month2int < 10)) {
+month2int = 11;
+}
+console.log(month2int);
+if (month2int == 1) {
+month2int += 10;
+document.getElementById("secondmonthDropDown").add(nov);
+
+document.getElementById("secondmonthDropDown").add(dec);
+
+setSelectValue('secondmonthDropDown', month2int);
+
+month2 = "November";
+
+}
+else if (month2int == 11) {
+document.getElementById("secondmonthDropDown").add(nov);
+
+document.getElementById("secondmonthDropDown").add(dec);
+
+setSelectValue('secondmonthDropDown', month2int);
+month2 = "November";
+}
+else {
+
+month2int += 10;
+document.getElementById("secondmonthDropDown").add(nov);
+
+document.getElementById("secondmonthDropDown").add(dec);
+
+setSelectValue('secondmonthDropDown', month2int);
+month2 = "December";
+
+}
+}
+else {
+
+
+
+secondmonthDropDown.remove(11);
+secondmonthDropDown.remove(10);
+secondmonthDropDown.remove(9);
+secondmonthDropDown.remove(8);
+secondmonthDropDown.remove(7);
+secondmonthDropDown.remove(6);
+secondmonthDropDown.remove(5);
+secondmonthDropDown.remove(4);
+secondmonthDropDown.remove(3);
+secondmonthDropDown.remove(2);
+secondmonthDropDown.remove(1);
+secondmonthDropDown.remove(0);
+
+document.getElementById("secondmonthDropDown").add(jan);
+document.getElementById("secondmonthDropDown").add(feb);
+document.getElementById("secondmonthDropDown").add(mar);
+document.getElementById("secondmonthDropDown").add(apr);
+document.getElementById("secondmonthDropDown").add(may);
+document.getElementById("secondmonthDropDown").add(jun);
+document.getElementById("secondmonthDropDown").add(jul);
+document.getElementById("secondmonthDropDown").add(aug);
+document.getElementById("secondmonthDropDown").add(sep);
+document.getElementById("secondmonthDropDown").add(oct);
+document.getElementById("secondmonthDropDown").add(nov);
+document.getElementById("secondmonthDropDown").add(dec);
+
+
+setSelectValue('secondmonthDropDown', month2int);
+console.log(month2int);
+console.log(month2);
+month2 = document.getElementById("secondmonthDropDown").value;
+
+}
+
+
+switch(month1) {
+  case "1":
+    month1 = "January";
+    break;
+  case "2":
+    month1 = "Feburary";
+    break;
+  case "3":
+    month1 = "March";
+    break;
+  case "4":
+    month1 = "April";
+    break;
+  case "5":
+    month1 = "May";
+    break;
+  case "6":
+    month1 = "June";
+    break;
+  case "7":
+    month1 = "July";
+    break;
+  case "8":
+    month1 = "August";
+    break;
+  case "9":
+    month1 = "September";
+    break;
+  case "10":
+    month1 = "October";
+    break;
+  case "11":
+    month1 = "November";
+    break;
+  case "12":
+    month1 = "December";
+    break;
+  default:
+    month1 = month1;
+}
+
+switch(month2) {
+  case "1":
+    month2 = "January";
+    break;
+  case "2":
+    month2 = "Feburary";
+    break;
+  case "3":
+    month2 = "March";
+    break;
+  case "4":
+    month2 = "April";
+    break;
+  case "5":
+    month2 = "May";
+    break;
+  case "6":
+    month2 = "June";
+    break;
+  case "7":
+    month2 = "July";
+    break;
+  case "8":
+    month2 = "August";
+    break;
+  case "9":
+    month2 = "September";
+    break;
+  case "10":
+    month2 = "October";
+    break;
+  case "11":
+    month2 = "November";
+    break;
+  case "12":
+    month2 = "December";
+    break;
+  default:
+    month2 = month2;
+}
+
+
+document.getElementById("DataDateInfo").innerHTML = "Data from " + month1 + " " + year1 + " to " + month2 + " " + year2;
+}
+
+function myFunction() {
+var month1 = document.getElementById("firstmonthDropDown").value;
+var month2 = document.getElementById("secondmonthDropDown").value;
+var year1 = document.getElementById("firstyearDropDown").value;
+var year2 = document.getElementById("secondyearDropDown").value;
+
+var month1text = "";
+var month2text = "";
+var year1text = "";
+var year2text = "";
+
+var month1int = 0;
+month1int = document.getElementById("firstmonthDropDown").selectedIndex;
+month1int += 1;
+
+var month2int = 0;
+month2int = document.getElementById("secondmonthDropDown").selectedIndex;
+month2int += 1;
+
+
+var jan = document.createElement("option");
+var feb = document.createElement("option");
+var mar = document.createElement("option");
+var apr = document.createElement("option");
+var may = document.createElement("option");
+var jun = document.createElement("option");
+var jul = document.createElement("option");
+var aug = document.createElement("option");
+var sep = document.createElement("option");
+var oct = document.createElement("option");
+var nov = document.createElement("option");
+var dec = document.createElement("option");
+
+jan.text = "1";
+feb.text = "2";
+mar.text = "3";
+apr.text = "4";
+may.text = "5";
+jun.text = "6";
+jul.text = "7";
+aug.text = "8";
+sep.text = "9";
+oct.text = "10";
+nov.text = "11";
+dec.text = "12";
+
+
+if (year1 == "2018") {
+console.log(month1int);
+firstmonthDropDown.remove(11);
+firstmonthDropDown.remove(10);
+firstmonthDropDown.remove(9);
+firstmonthDropDown.remove(8);
+firstmonthDropDown.remove(7);
+firstmonthDropDown.remove(6);
+firstmonthDropDown.remove(5);
+firstmonthDropDown.remove(4);
+firstmonthDropDown.remove(3);
+firstmonthDropDown.remove(2);
+firstmonthDropDown.remove(1);
+firstmonthDropDown.remove(0);
+
+if (month1int == 10) {
+month1int += 1;
+}
+else if ((month1int > 2) && (month1int < 10)) {
+month1int = 11;
+}
+console.log(month1int);
+if (month1int == 1) {
+month1int += 10;
+document.getElementById("firstmonthDropDown").add(nov);
+
+document.getElementById("firstmonthDropDown").add(dec);
+
+setSelectValue('firstmonthDropDown', month1int);
+
+month1 = "November";
+
+}
+else if (month1int == 11) {
+document.getElementById("firstmonthDropDown").add(nov);
+
+document.getElementById("firstmonthDropDown").add(dec);
+
+setSelectValue('firstmonthDropDown', month1int);
+month1 = "November";
+}
+else {
+
+month1int += 10;
+document.getElementById("firstmonthDropDown").add(nov);
+
+document.getElementById("firstmonthDropDown").add(dec);
+
+setSelectValue('firstmonthDropDown', month1int);
+month1 = "December";
+
+}
+}
+else {
+
+
+
+firstmonthDropDown.remove(11);
+firstmonthDropDown.remove(10);
+firstmonthDropDown.remove(9);
+firstmonthDropDown.remove(8);
+firstmonthDropDown.remove(7);
+firstmonthDropDown.remove(6);
+firstmonthDropDown.remove(5);
+firstmonthDropDown.remove(4);
+firstmonthDropDown.remove(3);
+firstmonthDropDown.remove(2);
+firstmonthDropDown.remove(1);
+firstmonthDropDown.remove(0);
+
+document.getElementById("firstmonthDropDown").add(jan);
+document.getElementById("firstmonthDropDown").add(feb);
+document.getElementById("firstmonthDropDown").add(mar);
+document.getElementById("firstmonthDropDown").add(apr);
+document.getElementById("firstmonthDropDown").add(may);
+document.getElementById("firstmonthDropDown").add(jun);
+document.getElementById("firstmonthDropDown").add(jul);
+document.getElementById("firstmonthDropDown").add(aug);
+document.getElementById("firstmonthDropDown").add(sep);
+document.getElementById("firstmonthDropDown").add(oct);
+document.getElementById("firstmonthDropDown").add(nov);
+document.getElementById("firstmonthDropDown").add(dec);
+
+
+setSelectValue('firstmonthDropDown', month1int);
+console.log(month1int);
+console.log(month1);
+month1 = document.getElementById("firstmonthDropDown").value;
+
+}
+
+
+switch(month1) {
+  case "1":
+    month1 = "January";
+    break;
+  case "2":
+    month1 = "Feburary";
+    break;
+  case "3":
+    month1 = "March";
+    break;
+  case "4":
+    month1 = "April";
+    break;
+  case "5":
+    month1 = "May";
+    break;
+  case "6":
+    month1 = "June";
+    break;
+  case "7":
+    month1 = "July";
+    break;
+  case "8":
+    month1 = "August";
+    break;
+  case "9":
+    month1 = "September";
+    break;
+  case "10":
+    month1 = "October";
+    break;
+  case "11":
+    month1 = "November";
+    break;
+  case "12":
+    month1 = "December";
+    break;
+  default:
+    month1 = month1;
+}
+
+switch(month2) {
+  case "1":
+    month2 = "January";
+    break;
+  case "2":
+    month2 = "Feburary";
+    break;
+  case "3":
+    month2 = "March";
+    break;
+  case "4":
+    month2 = "April";
+    break;
+  case "5":
+    month2 = "May";
+    break;
+  case "6":
+    month2 = "June";
+    break;
+  case "7":
+    month2 = "July";
+    break;
+  case "8":
+    month2 = "August";
+    break;
+  case "9":
+    month2 = "September";
+    break;
+  case "10":
+    month2 = "October";
+    break;
+  case "11":
+    month2 = "November";
+    break;
+  case "12":
+    month2 = "December";
+    break;
+  default:
+    month2 = "";
+}
+
+
+document.getElementById("DataDateInfo").innerHTML = "Data from " + month1 + " " + year1 + " to " + month2 + " " + year2;
+}
+</script>
+
+<style type="text/css">
+.tg  {border-collapse:collapse;border-spacing:0; display: inline-block;}
+.tg td{border-color:black;border-style:solid;border-width:1px;font-size:14px;
+  overflow:hidden;padding:10px 5px;word-break:normal;}
+.tg th{border-color:black;border-style:solid;border-width:1px;font-size:14px;
+  font-weight:normal;overflow:hidden;padding:10px 5px;word-break:normal;}
+.tg .tg-baqh{text-align:center;vertical-align:middle}
+.tg .tg-c3ow{border-color:inherit;text-align:center;vertical-align:middle}
+</style>
+
+<div id="table"><div id="SeverityRating"><div id="SeverityContainer"><div id="space"></div><div><img style="text-align:center;" src="https://i.ibb.co/4s4kwht/logo-transparent-background.png" alt="logo-transparent-background_severity" border="0" width="170" height="78.9"></img></div>
+<div id="cmapLabel"><label>Severity Rating converts a crime type, e.g. Burglary, and gives it a value on the crime's severity. Severity Rating values range from 0 to 100. The worse the crime the worse the severity rating. This allows crimes to be modelled on their month number, month in Unix, year number and their crime severity rating.
+</label></div>
+<div id="space"></div>
+<div><table class="tg">
+<thead>
+  <tr>
+    <th class="tg-c3ow">Crime</th>
+    <th class="tg-c3ow">CMAP Severity Rating</th>
+    <th class="tg-baqh">Crime</th>
+    <th class="tg-baqh">CMAP Severity Rating</th>
+  </tr>
+</thead>
+<tbody>
+  <tr>
+    <td class="tg-c3ow">All crime</td>
+    <td class="tg-c3ow">10</td>
+    <td class="tg-baqh">Public Order</td>
+    <td class="tg-0lax">30</td>
+  </tr>
+  <tr>
+    <td class="tg-c3ow">Anti-social behaviour</td>
+    <td class="tg-c3ow">50</td>
+    <td class="tg-baqh">Robbery</td>
+    <td class="tg-0lax">80</td>
+  </tr>
+  <tr>
+    <td class="tg-c3ow">Bicycle theft</td>
+    <td class="tg-c3ow">10</td>
+    <td class="tg-baqh">Shoplifting</td>
+    <td class="tg-0lax">30</td>
+  </tr>
+  <tr>
+    <td class="tg-c3ow">Burglary</td>
+    <td class="tg-c3ow">100</td>
+    <td class="tg-baqh">Theft from the person</td>
+    <td class="tg-0lax">90</td>
+  </tr>
+  <tr>
+    <td class="tg-c3ow">Criminal damage and arson</td>
+    <td class="tg-c3ow">90</td>
+    <td class="tg-baqh">Vehicle Crime</td>
+    <td class="tg-0lax">20</td>
+  </tr>
+  <tr>
+    <td class="tg-c3ow">Drugs</td>
+    <td class="tg-c3ow">60</td>
+    <td class="tg-baqh">Violence and sexual offences</td>
+    <td class="tg-0lax">90</td>
+  </tr>
+  <tr>
+    <td class="tg-c3ow">Other theft</td>
+    <td class="tg-c3ow">10</td>
+    <td class="tg-baqh">Other Crime</td>
+    <td class="tg-0lax">10</td>
+  </tr>
+  <tr>
+    <td class="tg-c3ow">Possession of weapons</td>
+    <td class="tg-c3ow">90</td>
+  </tr>
+</tbody>
+</table>
+<div id="space"></div>
+</div>
+</div>
+</div>
+</div>
+
+<div id="bottomDiv">
+<img src="https://i.ibb.co/x7DVZ6K/logo-transparent-background.png" alt="logo-transparent-background" border="0" width="112.2" height="52.074"></img><p style="color=#0741ad; font-size: 14px;">Created by Tom Perry 2021 (27009909)</p><a class="DataLink" href="https://data.police.uk/data/" style="color=#0741ad; font-size: 14px;"><p>Data Source</p></a>
+</div>
+</body>
+</html>

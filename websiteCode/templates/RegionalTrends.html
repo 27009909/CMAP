@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+      <link rel="icon" type="image/png" sizes="32x32" href="https://i.ibb.co/zR3RBFT/favicon-32x32.png">
+      <title>CMAP</title>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+      
+      <style>
+.collapsible {
+  background-color: #ffffff;
+  color: #0741ad;
+  cursor: pointer;
+  padding: 18px;
+  width: 100%;
+  border-style: solid;
+  border-width: 5px 5px 0px 5px;
+  text-align: left;
+  outline: none;
+  font-size: 15px;
+  border-color: #0741ad;
+  font-family: 'Futura PT Medium';
+ 
+}
+
+.collapsible2 {
+  background-color: #ffffff;
+  color: #0741ad;
+  cursor: pointer;
+  padding: 18px;
+  width: 100%;
+  border-style: solid;
+  border-width: 5px 5px 5px 5px;
+  text-align: left;
+  outline: none;
+  font-size: 15px;
+  border-color: #0741ad;
+  font-family: 'Futura PT Medium';
+ 
+}
+
+
+.active, .collapsible:hover  {
+  background-color: #dde8fe;
+  border-width: 5px 5px 5px 5px;
+}
+
+.active, .collapsible2:hover  {
+  background-color: #dde8fe;
+  border-width: 5px 5px 10px 5px;
+}
+
+.content {
+  padding: 0 18px;
+  display: none;
+  overflow: hidden;
+  background-color: #f1f1f1;
+  font-family: 'Futura PT Medium';
+}
+
+#collapsePoliceForces {
+    width: 42%;
+    text-align: center;
+    margin: 0 auto;
+}
+</style>
+
+   </head>
+   <body>
+      <div style="text-align:center;" id="titlecontainer">
+         <a href="http://cmap-env.eba-gitnjsz8.us-east-1.elasticbeanstalk.com/" style="text-align:center;"><img style="text-align:center;" src="https://i.ibb.co/x7DVZ6K/logo-transparent-background.png" alt="logo-transparent-background" border="0" width="170" height="78.9"></a>
+      </div>
+      <div id="titlecontainer">
+         <ul class="nav">
+            <li><a href="index.html" class="Links">Postcode Modelling & Plotting</a></li>
+            <li><a href="Compare.html" class="Links" >Compare Postcodes</a></li>
+            <li><a href="RegionalTrends.html" class="Links" style="border-style: solid;border-color: white;border-width: 1px;padding: 5px">Regional Modelling & Trends</a></li>
+         </ul>
+      </div>
+      
+<div id="collapsePoliceForces">
+<p style="float: left;">List of Police Forces in England</p><p style="float: right;">Crime rate is</p>
+<button type="button" class="collapsible"><p style="float: left;">Avon and Somerset Constabulary</p><p style="float: right; color: green;">Decreasing</p></button>
+<div class="content">
+  <p>Crime is Decreasing</p>
+  <p>Mode crime is Violence and sexual offences</p>
+  <p>Predicted number of crimes (next month) is 13114</p>
+  <p>CMAP crime severity rating is 60.09</p>
+  <p>Data from 11/2018 to 11/2020</p>
+  </div>
+<button type="button" class="collapsible"><p style="float: left;">Bedfordshire Police</p><p style="float: right; color: green;">Decreasing</p></button>
+<div class="content">  
+  <p>Crime is Decreasing</p>
+  <p>Predicted number of crimes (next month) is </p>
+  <p>CMAP crime severity rating is </p></div>
+<button type="button" class="collapsible"><p style="float: left;">British Transport Police</p><p style="float: right; color: red;">Increasing</p></button>
+<div class="content">
+    
+  <p>Crime is Decreasing</p>
+  <p>Predicted number of crimes (next month) is </p>
+  <p>CMAP crime severity rating is </p></div>
+<button type="button" class="collapsible"><p style="float: left;">Cambridgeshire Constabulary</p><p style="float: right; color: red;">Increasing</p></button>
+<div class="content">
+    
+  <p>Crime is Decreasing</p>
+  <p>Predicted number of crimes (next month) is </p>
+  <p>CMAP crime severity rating is </p></div>
+<button type="button" class="collapsible"><p style="float: left;">Cheshire Constabulary</p><p style="float: right; color: red;">Increasing</p></button>
+<div class="content">
+    
+  <p>Crime is Decreasing</p>
+  <p>Predicted number of crimes (next month) is </p>
+  <p>CMAP crime severity rating is </p></div>
+<button type="button" class="collapsible"><p style="float: left;">City of London Police</p><p style="float: right; color: green;">Decreasing</p></button>
+<div class="content">
+    
+  <p>Crime is Decreasing</p>
+  <p>Predicted number of crimes (next month) is </p>
+  <p>CMAP crime severity rating is </p></div>
+<button type="button" class="collapsible"><p style="float: left;">Cleveland Police</p><p style="float: right; color: red;">Increasing</p></button>
+<div class="content">
+    
+  <p>Crime is Decreasing</p>
+  <p>Predicted number of crimes (next month) is </p>
+  <p>CMAP crime severity rating is </p></div>
+<button type="button" class="collapsible"><p style="float: left;">Cumbria Constabulary</p><p style="float: right; color: green;">Decreasing</p></button>
+<div class="content">
+    
+  <p>Crime is Decreasing</p>
+  <p>Predicted number of crimes (next month) is </p>
+  <p>CMAP crime severity rating is </p></div>
+<button type="button" class="collapsible"><p style="float: left;">Derbyshire Constabulary</p><p style="float: right; color: red;">Increasing</p></button>
+<div class="content">
+    
+  <p>Crime is Decreasing</p>
+  <p>Predicted number of crimes (next month) is </p>
+  <p>CMAP crime severity rating is </p></div>
+<button type="button" class="collapsible"><p style="float: left;">Devon & Cornwall Police</p><p style="float: right; color: red;">Increasing</p></button>
+<div class="content">
+    
+    <p>Crime is Increasing</p>
+  <p>Mode crime is Violence and sexual offences</p>
+  <p>Predicted number of crimes (next month) is 12975</p>
+  <p>CMAP crime severity rating is 64.51</p>
+  <p>Data from 11/2018 to 11/2020</p>
+  </div>
+<button type="button" class="collapsible"><p style="float: left;">Dorset Police</p><p style="float: right; color: green;">Decreasing</p></button>
+<div class="content">
+    
+  <p>Crime is Decreasing</p>
+  <p>Predicted number of crimes (next month) is </p>
+  <p>CMAP crime severity rating is </p></div>
+<button type="button" class="collapsible"><p style="float: left;">Durham Constabulary</p><p style="float: right; color: green;">Decreasing</p></button>
+<div class="content">
+    
+  <p>Crime is Decreasing</p>
+  <p>Predicted number of crimes (next month) is </p>
+  <p>CMAP crime severity rating is </p></div>
+<button type="button" class="collapsible"><p style="float: left;">Essex Police</p><p style="float: right; color: red;">Increasing</p></button>
+<div class="content">
+    
+  <p>Crime is Decreasing</p>
+  <p>Predicted number of crimes (next month) is </p>
+  <p>CMAP crime severity rating is </p></div>
+<button type="button" class="collapsible"><p style="float: left;">Gloucestershire Constabulary</p><p style="float: right; color: green;">Decreasing</p></button>
+<div class="content">
+    
+  <p>Crime is Decreasing</p>
+  <p>Predicted number of crimes (next month) is </p>
+  <p>CMAP crime severity rating is </p></div>
+<button type="button" class="collapsible"><p style="float: left;">Greater Manchester Police</p><p style="float: right; color: red;">Increasing</p></button>
+<div class="content">
+    
+  <p>Crime is Decreasing</p>
+  <p>Predicted number of crimes (next month) is </p>
+  <p>CMAP crime severity rating is </p></div>
+<button type="button" class="collapsible"><p style="float: left;">Hampshire Constabulary</p><p style="float: right; color: red;">Increasing</p></button>
+<div class="content">
+    
+  <p>Crime is Decreasing</p>
+  <p>Predicted number of crimes (next month) is </p>
+  <p>CMAP crime severity rating is </p></div>
+<button type="button" class="collapsible"><p style="float: left;">Hertfordshire Constabulary</p><p style="float: right; color: green;">Decreasing</p></button>
+<div class="content">
+    
+  <p>Crime is Decreasing</p>
+  <p>Predicted number of crimes (next month) is </p>
+  <p>CMAP crime severity rating is </p></div>
+<button type="button" class="collapsible"><p style="float: left;">Humberside Police</p><p style="float: right; color: red;">Increasing</p></button>
+<div class="content">
+    
+  <p>Crime is Decreasing</p>
+  <p>Predicted number of crimes (next month) is </p>
+  <p>CMAP crime severity rating is </p></div>
+<button type="button" class="collapsible"><p style="float: left;">Kent Police</p><p style="float: right; color: green;">Decreasing</p></button>
+<div class="content">
+    
+  <p>Crime is Decreasing</p>
+  <p>Predicted number of crimes (next month) is </p>
+  <p>CMAP crime severity rating is </p></div>
+<button type="button" class="collapsible"><p style="float: left;">Lancashire Constabulary</p><p style="float: right; color: red;">Increasing</p></button>
+<div class="content">
+    
+  <p>Crime is Decreasing</p>
+  <p>Predicted number of crimes (next month) is </p>
+  <p>CMAP crime severity rating is </p></div>
+<button type="button" class="collapsible"><p style="float: left;">Leicestershire Police</p><p style="float: right; color: green;">Decreasing</p></button>
+<div class="content">
+    
+  <p>Crime is Decreasing</p>
+  <p>Predicted number of crimes (next month) is </p>
+  <p>CMAP crime severity rating is </p></div>
+<button type="button" class="collapsible"><p style="float: left;">Lincolnshire Police</p><p style="float: right; color: red;">Increasing</p></button>
+<div class="content">
+    
+  <p>Crime is Decreasing</p>
+  <p>Predicted number of crimes (next month) is </p>
+  <p>CMAP crime severity rating is </p></div>
+<button type="button" class="collapsible"><p style="float: left;">Merseyside Police</p><p style="float: right; color: green;">Decreasing</p></button>
+<div class="content">
+    
+  <p>Crime is Decreasing</p>
+  <p>Predicted number of crimes (next month) is </p>
+  <p>CMAP crime severity rating is </p></div>
+<button type="button" class="collapsible"><p style="float: left;">Metropolitan Police Service</p><p style="float: right; color: red;">Increasing</p></button>
+<div class="content">
+    
+  <p>Crime is Decreasing</p>
+  <p>Predicted number of crimes (next month) is </p>
+  <p>CMAP crime severity rating is </p></div>
+<button type="button" class="collapsible"><p style="float: left;">Norfolk Constabulary</p><p style="float: right; color: green;">Decreasing</p></button>
+<div class="content">
+    
+  <p>Crime is Decreasing</p>
+  <p>Predicted number of crimes (next month) is </p>
+  <p>CMAP crime severity rating is </p></div>
+<button type="button" class="collapsible"><p style="float: left;">North Yorkshire Police</p><p style="float: right; color: red;">Increasing</p></button>
+<div class="content">
+    
+  <p>Crime is Decreasing</p>
+  <p>Predicted number of crimes (next month) is </p>
+  <p>CMAP crime severity rating is </p></div>
+<button type="button" class="collapsible"><p style="float: left;">Northamptonshire Police</p><p style="float: right; color: red;">Increasing</p></button>
+<div class="content">
+    
+  <p>Crime is Decreasing</p>
+  <p>Predicted number of crimes (next month) is </p>
+  <p>CMAP crime severity rating is </p></div>
+<button type="button" class="collapsible"><p style="float: left;">Northumbria Police</p><p style="float: right; color: green;">Decreasing</p></button>
+<div class="content">
+    
+  <p>Crime is Decreasing</p>
+  <p>Predicted number of crimes (next month) is </p>
+  <p>CMAP crime severity rating is </p></div>
+<button type="button" class="collapsible"><p style="float: left;">Nottinghamshire Police</p><p style="float: right; color: red;">Increasing</p></button>
+<div class="content">
+    
+  <p>Crime is Decreasing</p>
+  <p>Predicted number of crimes (next month) is </p>
+  <p>CMAP crime severity rating is </p></div>
+<button type="button" class="collapsible"><p style="float: left;">South Yorkshire Police</p><p style="float: right; color: red;">Increasing</p></button>
+<div class="content">
+   
+  <p>Crime is Decreasing</p>
+  <p>Predicted number of crimes (next month) is </p>
+  <p>CMAP crime severity rating is </p></div>
+<button type="button" class="collapsible"><p style="float: left;">Staffordshire Police</p><p style="float: right; color: green;">Decreasing</p></button>
+<div class="content">
+    
+  <p>Crime is Decreasing</p>
+  <p>Predicted number of crimes (next month) is </p>
+  <p>CMAP crime severity rating is </p></div>
+<button type="button" class="collapsible"><p style="float: left;">Suffolk Constabulary</p><p style="float: right; color: green;">Decreasing</p></button>
+<div class="content">
+    
+  <p>Crime is Decreasing</p>
+  <p>Predicted number of crimes (next month) is </p>
+  <p>CMAP crime severity rating is </p></div>
+<button type="button" class="collapsible"><p style="float: left;">Surrey Police</p><p style="float: right; color: green;">Decreasing</p></button>
+<div class="content">
+    
+  <p>Crime is Decreasing</p>
+  <p>Predicted number of crimes (next month) is </p>
+  <p>CMAP crime severity rating is </p></div>
+<button type="button" class="collapsible"><p style="float: left;">Sussex Police</p><p style="float: right; color: red;">Increasing</p></button>
+<div class="content">
+    
+  <p>Crime is Decreasing</p>
+  <p>Predicted number of crimes (next month) is </p>
+  <p>CMAP crime severity rating is </p></div>
+<button type="button" class="collapsible"><p style="float: left;">Thames Valley Police</p><p style="float: right; color: red;">Increasing</p></button>
+<div class="content">
+    
+  <p>Crime is Decreasing</p>
+  <p>Predicted number of crimes (next month) is </p>
+  <p>CMAP crime severity rating is </p></div>
+<button type="button" class="collapsible"><p style="float: left;">Warwickshire Police</p><p style="float: right; color: green;">Decreasing</p></button>
+<div class="content">
+    
+  <p>Crime is Decreasing</p>
+  <p>Predicted number of crimes (next month) is </p>
+  <p>CMAP crime severity rating is </p></div>
+<button type="button" class="collapsible"><p style="float: left;">West Mercia Police</p><p style="float: right; color: red;">Increasing</p></button>
+<div class="content">
+    
+  <p>Crime is Decreasing</p>
+  <p>Predicted number of crimes (next month) is </p>
+  <p>CMAP crime severity rating is </p></div>
+<button type="button" class="collapsible"><p style="float: left;">West Midlands Police</p><p style="float: right; color: green;">Decreasing</p></button>
+<div class="content">
+    
+  <p>Crime is Decreasing</p>
+  <p>Predicted number of crimes (next month) is </p>
+  <p>CMAP crime severity rating is </p></div>
+<button type="button" class="collapsible"><p style="float: left;">West Yorkshire Police</p><p style="float: right; color: red;">Increasing</p></button>
+<div class="content">
+    
+  <p>Crime is Decreasing</p>
+  <p>Predicted number of crimes (next month) is </p>
+  <p>CMAP crime severity rating is </p></div>
+<button type="button" class="collapsible2"><p style="float: left;">Wiltshire Police</p><p style="float: right; color: green;">Decreasing</p></button>
+<div class="content">
+  <p>Crime is Decreasing</p>
+  <p>Predicted number of crimes (next month) is </p>
+  <p>CMAP crime severity rating is </p></div>
+</div>
+
+<script>
+var coll = document.getElementsByClassName("collapsible");
+var i;
+
+for (i = 0; i < coll.length; i++) {
+  coll[i].addEventListener("click", function() {
+    this.classList.toggle("active");
+    var content = this.nextElementSibling;
+    if (content.style.display === "block") {
+      content.style.display = "none";
+    } else {
+      content.style.display = "block";
+    }
+  });
+}
+</script>
+
+<script>
+var coll = document.getElementsByClassName("collapsible2");
+var i;
+
+for (i = 0; i < coll.length; i++) {
+  coll[i].addEventListener("click", function() {
+    this.classList.toggle("active");
+    var content = this.nextElementSibling;
+    if (content.style.display === "block") {
+      content.style.display = "none";
+    } else {
+      content.style.display = "block";
+    }
+  });
+}
+</script>
+
+<div id="space"></div>
+<div id="bottomDiv">
+<img src="https://i.ibb.co/x7DVZ6K/logo-transparent-background.png" alt="logo-transparent-background" border="0" width="112.2" height="52.074"></img><p style="color=#0741ad; font-size: 14px;">Created by Tom Perry 2021 (27009909)</p><a class="DataLink" href="https://data.police.uk/data/" style="color=#0741ad; font-size: 14px;"><p>Data Source</p></a>
+</div>
+   </body>
+</html>
